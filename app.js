@@ -100,7 +100,6 @@ function stopWatch() {
     let minutes = Math.floor(timeSec / 60);
     minutes = minutes < 10 ? ('0'+ minutes) : minutes;
     seconds = seconds < 10 ? ('0'+ seconds) : seconds;
-    // console.log('submitted');
     timer.innerHTML = `${minutes}:${seconds}`;
   }, 1000)
 }
