@@ -1,3 +1,4 @@
+// TODO: Timer double submits do to set interval callback quirk
 // TODO: flash orange in Failure Handler
 // TODO: make easy, medium, hard buttons with number of tries allowed.
 
@@ -18,6 +19,8 @@ const replayButtons = document.querySelectorAll('.replay');
 const stars = document.querySelector('.stars');
 
 const startTime = performance.now();
+
+const timer = document.querySelector('time');
 
 let successCounter = 0;
 
@@ -89,15 +92,18 @@ function rotateCard(cardElement) {
   cardElement.style.transform = 'rotateY(180deg)';
 }
 
-// function stopWatch() {
-//   //returns string ('MM:SS')
-//   setTimeout( () => {
-//     timeSec++;
-//     let seconds = timeSec % 60;
-//     let minutes = Math.floor(timeSec / 60);
-//     console.log(`${minutes}:${seconds}`);
-//   }, 1000)
-// }
+function stopWatch() {
+  //returns string ('MM:SS')
+  setInterval( () => {
+    timeSec++;
+    let seconds = timeSec % 60;
+    let minutes = Math.floor(timeSec / 60);
+    minutes = minutes < 10 ? ('0'+ minutes) : minutes;
+    seconds = seconds < 10 ? ('0'+ seconds) : seconds;
+    // console.log('submitted');
+    timer.innerHTML = `${minutes}:${seconds}`;
+  }, 1000)
+}
 
 function successHandler(...icons) {
   //replace with checkmark and make green
@@ -150,6 +156,7 @@ function updateStars(attemptn) {
 // LOGIC
 
 randomizeCardOrder();
+stopWatch();
 
 cardCanvas.addEventListener('click', (event) => {
     let currentCard = moveToCard(event.target);
