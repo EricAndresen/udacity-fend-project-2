@@ -21,6 +21,8 @@ const startTime = performance.now();
 
 let successCounter = 0;
 
+let timeSec = 0; //time value of stopwatch
+
 // FUNCTIONS
 
 function compareCard(cardElement) {
@@ -87,6 +89,16 @@ function rotateCard(cardElement) {
   cardElement.style.transform = 'rotateY(180deg)';
 }
 
+// function stopWatch() {
+//   //returns string ('MM:SS')
+//   setTimeout( () => {
+//     timeSec++;
+//     let seconds = timeSec % 60;
+//     let minutes = Math.floor(timeSec / 60);
+//     console.log(`${minutes}:${seconds}`);
+//   }, 1000)
+// }
+
 function successHandler(...icons) {
   //replace with checkmark and make green
   setTimeout( () => {
@@ -128,7 +140,7 @@ function winHandler() {
 
 function updateStars(attemptn) {
   //reduce star count every 5 attempts
-  if(attemptn >= 5 && attemptn < 16) {
+  if(attemptn >= 5 && attemptn < 11) {
     let starIndex = Math.floor(attemptn/5) + 1;
     stars.children[starIndex].classList.remove('fa-star');
     stars.children[starIndex].classList.add('fa-star-o');
