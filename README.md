@@ -1,6 +1,6 @@
 # Memory game
 
-This is a simple memory card game implement in HTML5 CSS3 and vanilla ES6. There are no dependencies. CSS grid and Flexbox is used to define layout and CSS animations are used for all animations.
+This is a simple memory card game implement in HTML5, CSS3, and vanilla ES6. There are no dependencies. CSS grid and Flexbox are used to define layout and CSS animations are used for all animations.
 
 ## Code Conventions
 
