@@ -26,7 +26,7 @@ let successCounter = 0;
 function compareCard(cardElement) {
   //moves to div.card > div.back> i.(class to compare) and sees if classes of both cards match
   let currentCardIcon = cardElement.lastElementChild.firstElementChild
-  if (previousCardIcon) {
+  if (previousCardIcon && currentCardIcon !== previousCardIcon) {
     previousCardIcon.className == currentCardIcon.className ? successHandler(previousCardIcon, currentCardIcon) : failureHandler(previousCardIcon, currentCardIcon);
     //reset after comparison
     previousCardIcon = '';
