@@ -1,4 +1,4 @@
-// TODO: Timer double submits do to set interval callback quirk
+// TODO: Timer double submits due to setInterval() callback quirk (no performance effect)
 // TODO: flash orange in Failure Handler
 // TODO: make easy, medium, hard buttons with number of tries allowed.
 
